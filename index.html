@@ -176,7 +176,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         
-        .progress-report {
+        .documents-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .progress-report, .resume-download {
             background: #FFE4E1;
             padding: 30px;
             border-radius: 8px;
@@ -186,12 +194,16 @@
                 inset 0 1px 3px rgba(255, 255, 255, 0.3);
             transform: rotate(-0.8deg);
             position: relative;
-            max-width: 400px;
-            margin: 0 auto;
             border: 1px solid #FFB6C1;
         }
         
-        .progress-report::before {
+        .resume-download {
+            background: #E6F3FF;
+            border: 1px solid #B3D9FF;
+            transform: rotate(0.8deg);
+        }
+        
+        .progress-report::before, .resume-download::before {
             content: '';
             position: absolute;
             top: -8px;
@@ -204,6 +216,10 @@
             box-shadow: 
                 0 0 0 2px #FFD700,
                 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .resume-download::before {
+            background: #4444FF;
         }
         
         .report-title {
@@ -316,13 +332,13 @@
             
             <div class="project-card card-4">
                 <h3 class="project-title">DFW Chess Coach</h3>
-                <p class="project-description">Multilingual chess coaching platform with translation features, booking system, and marketing optimization for local services.</p>
+                <p class="project-description">Professional chess coaching platform with SEO optimization, booking system, and Hebrew translation in development to target Israeli market expansion.</p>
                 <div class="tech-stack">
                     <span class="tech-tag">React</span>
-                    <span class="tech-tag">i18n Translation</span>
-                    <span class="tech-tag">SEO</span>
-                    <span class="tech-tag">Booking System</span>
+                    <span class="tech-tag">SEO Optimization</span>
+                    <span class="tech-tag">Responsive Design</span>
                     <span class="tech-tag">Marketing</span>
+                    <span class="tech-tag">i18n (In Progress)</span>
                 </div>
                 <a href="https://dfw-chess-coach.vercel.app/" class="project-link" target="_blank">View Coach Site</a>
             </div>
@@ -341,20 +357,202 @@
             </div>
         </div>
         
-        <div class="progress-report">
-            <h3 class="report-title">📊 Progress Report</h3>
-            <p class="report-description">Comprehensive overview of coding journey, skills acquired, and project milestones achieved.</p>
-            <a href="#" class="download-btn" onclick="downloadReport()">📥 Download PDF</a>
-        </div>
-        
-        <div class="progress-report" style="margin-top: 30px; background: #E8F5E8;">
-            <h3 class="report-title" style="color: #2E7D32;">📄 Professional Resume</h3>
-            <p class="report-description">Complete professional background including technical skills, bootcamp training, and operational experience.</p>
-            <a href="#" class="download-btn" onclick="downloadResume()" style="background: linear-gradient(45deg, #4CAF50, #45a049);">📥 Download Resume</a>
+        <div class="documents-section">
+            <div class="progress-report">
+                <h3 class="report-title">📊 Progress Report</h3>
+                <p class="report-description">Comprehensive overview of coding journey, skills acquired, and project milestones achieved.</p>
+                <a href="#" class="download-btn" onclick="downloadReport()">📥 Download Analysis</a>
+            </div>
+            
+            <div class="resume-download">
+                <h3 class="report-title">📄 Professional Resume</h3>
+                <p class="report-description">Complete professional resume highlighting technical skills, project experience, and career background.</p>
+                <a href="#" class="download-btn" onclick="downloadResume()">📥 Download Resume</a>
+            </div>
         </div>
     </div>
     
     <script>
+        
+        function downloadResume() {
+            const resumeContent = `
+**YITZCHOK FEIGENBAUM**
+Full Stack Web Developer
+
+Dallas, TX 75230 | Email: feigenbaumsfish@gmail.com | Phone: (469) 580-7710
+Portfolio: https://yitzs-project-board.vercel.app
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**PROFESSIONAL SUMMARY**
+
+Trainable and resourceful full stack web developer with a robust background in sales, operations, 
+production management, and marketing. Recently completed comprehensive web development training 
+with hands-on experience deploying production applications. Proven track record of troubleshooting 
+complex systems, managing cross-functional teams, and delivering results under pressure. Seeking 
+to leverage operational expertise and newly acquired technical skills in a dynamic development 
+environment.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**TECHNICAL SKILLS**
+
+**Frontend Development:**
+• HTML5, CSS3, JavaScript (ES6+)
+• React.js, Next.js, JSX
+• Responsive Web Design
+• DOM Manipulation & Event Handling
+
+**Backend & Database:**
+• PostgreSQL Database Integration
+• API Development & Integration
+• RESTful Services
+
+**Development Tools:**
+• VS Code, Git Version Control
+• GitHub Repository Management
+• Vercel & Netlify Deployment
+• Command Line Interface
+
+**Specialized Integrations:**
+• AI API Integration
+• Timeline.js Data Visualization
+• PDF.js Document Processing
+• Internationalization (i18n)
+• Interactive Mapping Services
+• Financial Charting Libraries
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**RECENT TECHNICAL PROJECTS**
+
+**AI News Dashboard** (https://lijw-ai-dashboard-demo.vercel.app/)
+• Modernized digital ecosystem with AI-powered news curation
+• User preference systems and creator monetization features
+• Technologies: Next.js, React, AI APIs, Vercel deployment
+
+**Publication Archive** (https://publication-archive.vercel.app/)
+• Media client archive with interactive flipbook functionality
+• Document management and content organization system
+• Technologies: React, Next.js, PDF.js, Responsive Design
+
+**UNT Misconduct Investigation** (https://unt-misconduct.vercel.app/)
+• Complex investigative journalism platform
+• Interactive timeline with mapping integration
+• Technologies: React, Timeline.js, Mapping APIs, Video Integration
+
+**DFW Chess Coach** (https://dfw-chess-coach.vercel.app/)
+• Professional chess coaching platform with SEO optimization
+• Hebrew translation in development for Israeli market expansion
+• Technologies: React, SEO Optimization, Responsive Design
+
+**FPV Kibbutz Investment** (https://fpv-kibbutz.vercel.app/)
+• Business investment platform with financial modeling
+• Interactive charts and investor relations tools
+• Technologies: Next.js, Financial Charts, Data Analytics
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**TECHNICAL TRAINING**
+
+**Full Stack Web Development Bootcamp** (Self-Directed, 2024-2025)
+• Built 5 production-ready responsive web applications
+• Mastered React/Next.js ecosystem with modern hooks and state management
+• Integrated PostgreSQL databases with web applications
+• Deployed applications using Vercel with 100% uptime success rate
+• Established VS Code → GitHub → Vercel development workflow
+• Strengthened debugging and problem-solving through hands-on practice
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**PROFESSIONAL EXPERIENCE**
+
+**Freelance Marketing Consultant** (2018–Present)
+• Delivered comprehensive digital marketing solutions including PR, content, and events
+• Specialized in investor relations and B2B campaign management
+• Led cross-platform branding efforts for niche market clients
+• Managed client relationships and project coordination
+
+**Manager, The Orange Spot Bistro** – Cincinnati, OH (2023–2024)
+• Expanded operations for corporate headquarters kosher dual kitchen model
+• Implemented streamlined SOPs and educational systems for compliance
+• Navigated complex logistical challenges and communication barriers
+• Advocated for system improvements and sustainable practices
+
+**Production Manager & Marketing Consultant, Banner Smoked Fish** – NY (2022–2023)
+• Managed factory workflows and improved product lifecycle efficiency
+• Directed marketing strategy and brand outreach in competitive food markets
+• Coordinated cross-functional teams for production optimization
+
+**Co-founder, Levanah Consulting** (2021–2023)
+• Strategized and executed custom marketing campaigns for vegan and kosher brands
+• Strengthened client relations and delivered results across diverse project scopes
+• Built business from concept to profitable operation
+
+**Partner, Feigenbaums Fish** – Kodiak, AK (2020–2023)
+• Oversaw logistics, vendor partnerships, and customer-facing operations
+• Designed and launched marketing campaigns across platforms
+• Managed seasonal business operations in challenging environment
+
+**Multifamily Sales Manager, Madison CRE Services** – Dallas, TX (2019–2020)
+• Developed lead pipelines and managed investor relations
+• Coordinated multifamily real estate deals and client communications
+
+**Director of Business Development, Sinai Urgent Care** – Dallas, TX (2018–2019)
+• Launched new locations and planned local outreach initiatives
+• Increased community brand awareness through strategic marketing
+• Managed stakeholder relationships and business development
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**CORE COMPETENCIES**
+
+**Technical Problem Solving:** Proven ability to debug complex systems and implement solutions
+
+**Process Optimization:** Experience streamlining workflows and improving efficiency
+
+**Cross-Team Communication:** Skilled at coordinating between technical and business stakeholders
+
+**Adaptability:** Thrives in high-pressure, fast-changing environments
+
+**Client Engagement:** Strong relationship building and project management skills
+
+**Project Leadership:** Successfully led teams and delivered results on time and budget
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**LANGUAGES**
+• English: Native
+• Hebrew: Conversational
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**ADDITIONAL INFORMATION**
+• Available for full-time positions in Dallas, TX area or remote
+• Open to junior developer, full stack developer, or frontend developer roles
+• Passionate about combining technical skills with business acumen
+• Committed to continuous learning and professional development
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Generated: ${new Date().toLocaleDateString()}
+Contact: feigenbaumsfish@gmail.com | (469) 580-7710
+Portfolio: https://yitzs-project-board.vercel.app
+            `;
+            
+            const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Yitzchok_Feigenbaum_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            alert('Resume Downloaded!\\n\\nProfessional resume including:\\n• Complete technical skills overview\\n• Detailed project descriptions with live links\\n• Professional experience and achievements\\n• Contact information and availability');
+        }
+
         function downloadReport() {
             // Enhanced progress report content based on actual projects
             const reportContent = `
@@ -466,176 +664,6 @@ Contact: Available for junior developer positions
             
             // Show download confirmation
             alert('Progress Report Downloaded!\n\nComprehensive analysis of your coding journey including:\n• Technical skill progression\n• Project complexity analysis\n• Professional development milestones\n• Readiness assessment for next career phase');
-        }
-        
-        function downloadResume() {
-            // Cleaned up and formatted resume
-            const resumeContent = `
-YITZCHOK FEIGENBAUM
-Full Stack Web Developer
-
-Dallas, TX 75230
-Email: feigenbaumsfish@gmail.com
-Phone: (469) 580-7710
-Portfolio: https://yitzs-project-board.vercel.app
-
-═══════════════════════════════════════════════════════════════
-
-PROFESSIONAL SUMMARY
-
-Trainable and resourceful full stack web developer with a robust background in sales, operations, production management, and marketing. Recently completed comprehensive web development training with hands-on experience deploying production applications. Proven track record of troubleshooting complex systems, managing cross-functional teams, and delivering results under pressure. Seeking to leverage operational expertise and newly acquired technical skills in a dynamic development environment.
-
-═══════════════════════════════════════════════════════════════
-
-TECHNICAL SKILLS
-
-Frontend Development:
-• HTML5, CSS3, JavaScript (ES6+)
-• React.js, Next.js, JSX
-• Responsive Web Design
-• DOM Manipulation & Event Handling
-
-Backend & Database:
-• PostgreSQL Database Integration
-• API Development & Integration
-• RESTful Services
-
-Development Tools:
-• VS Code, Git Version Control
-• GitHub Repository Management
-• Vercel & Netlify Deployment
-• Command Line Interface
-
-Specialized Integrations:
-• AI API Integration
-• Timeline.js Data Visualization
-• PDF.js Document Processing
-• Internationalization (i18n)
-• Interactive Mapping Services
-• Financial Charting Libraries
-
-═══════════════════════════════════════════════════════════════
-
-RECENT TECHNICAL PROJECTS
-
-AI News Dashboard (https://lijw-ai-dashboard-demo.vercel.app/)
-• Modernized digital ecosystem with AI-powered news curation
-• User preference systems and creator monetization features
-• Technologies: Next.js, React, AI APIs, Vercel deployment
-
-Publication Archive (https://publication-archive.vercel.app/)
-• Media client archive with interactive flipbook functionality
-• Document management and content organization system
-• Technologies: React, Next.js, PDF.js, Responsive Design
-
-UNT Misconduct Investigation (https://unt-misconduct.vercel.app/)
-• Complex investigative journalism platform
-• Interactive timeline with mapping integration
-• Technologies: React, Timeline.js, Mapping APIs, Video Integration
-
-DFW Chess Coach (https://dfw-chess-coach.vercel.app/)
-• Multilingual chess coaching platform with booking system
-• SEO optimization and marketing features
-• Technologies: React, i18n Translation, SEO, Booking Systems
-
-FPV Kibbutz Investment (https://fpv-kibbutz.vercel.app/)
-• Business investment platform with financial modeling
-• Interactive charts and investor relations tools
-• Technologies: Next.js, Financial Charts, Data Analytics
-
-═══════════════════════════════════════════════════════════════
-
-TECHNICAL TRAINING
-
-Full Stack Web Development Bootcamp (Self-Directed, 2024-2025)
-• Built 5 production-ready responsive web applications
-• Mastered React/Next.js ecosystem with modern hooks and state management
-• Integrated PostgreSQL databases with web applications
-• Deployed applications using Vercel with 100% uptime success rate
-• Established VS Code → GitHub → Vercel development workflow
-• Strengthened debugging and problem-solving through hands-on practice
-
-═══════════════════════════════════════════════════════════════
-
-PROFESSIONAL EXPERIENCE
-
-Freelance Marketing Consultant (2018–Present)
-• Delivered comprehensive digital marketing solutions including PR, content, and events
-• Specialized in investor relations and B2B campaign management
-• Led cross-platform branding efforts for niche market clients
-• Managed client relationships and project coordination
-
-Manager, The Orange Spot Bistro – Cincinnati, OH (2023–2024)
-• Expanded operations for corporate headquarters kosher dual kitchen model
-• Implemented streamlined SOPs and educational systems for compliance
-• Navigated complex logistical challenges and communication barriers
-• Advocated for system improvements and sustainable practices
-
-Production Manager & Marketing Consultant, Banner Smoked Fish – NY (2022–2023)
-• Managed factory workflows and improved product lifecycle efficiency
-• Directed marketing strategy and brand outreach in competitive food markets
-• Coordinated cross-functional teams for production optimization
-
-Co-founder, Levanah Consulting (2021–2023)
-• Strategized and executed custom marketing campaigns for vegan and kosher brands
-• Strengthened client relations and delivered results across diverse project scopes
-• Built business from concept to profitable operation
-
-Partner, Feigenbaums Fish – Kodiak, AK (2020–2023)
-• Oversaw logistics, vendor partnerships, and customer-facing operations
-• Designed and launched marketing campaigns across platforms
-• Managed seasonal business operations in challenging environment
-
-Multifamily Sales Manager, Madison CRE Services – Dallas, TX (2019–2020)
-• Developed lead pipelines and managed investor relations
-• Coordinated multifamily real estate deals and client communications
-
-Director of Business Development, Sinai Urgent Care – Dallas, TX (2018–2019)
-• Launched new locations and planned local outreach initiatives
-• Increased community brand awareness through strategic marketing
-• Managed stakeholder relationships and business development
-
-═══════════════════════════════════════════════════════════════
-
-CORE COMPETENCIES
-
-Technical Problem Solving: Proven ability to debug complex systems and implement solutions
-Process Optimization: Experience streamlining workflows and improving efficiency
-Cross-Team Communication: Skilled at coordinating between technical and business stakeholders
-Adaptability: Thrives in high-pressure, fast-changing environments
-Client Engagement: Strong relationship building and project management skills
-Project Leadership: Successfully led teams and delivered results on time and budget
-
-═══════════════════════════════════════════════════════════════
-
-LANGUAGES
-
-English: Native
-Hebrew: Conversational
-
-═══════════════════════════════════════════════════════════════
-
-ADDITIONAL INFORMATION
-
-• Available for full-time positions in Dallas, TX area or remote
-• Open to junior developer, full stack developer, or frontend developer roles
-• Passionate about combining technical skills with business acumen
-• Committed to continuous learning and professional development
-
-Generated: ${new Date().toLocaleDateString()}
-            `;
-            
-            const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Yitzchok_Feigenbaum_Resume_2025.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-            
-            alert('Resume Downloaded!\n\nProfessional resume including:\n• Updated technical skills section\n• Live project portfolio links\n• Enhanced professional summary\n• Comprehensive experience details');
         }
         
         // Add some interactive effects
